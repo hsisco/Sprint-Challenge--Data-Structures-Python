@@ -1,13 +1,13 @@
 class RingBuffer:
-    def __init__(self, capacity=3):
+    def __init__(self, capacity):
         self.capacity = capacity
         self.storage = []
         self.curr = 0
 
     def append(self, item):
         if len(self.storage) == self.capacity:
-            self.curr = (self.curr +1) % self.capacity
             self.storage[self.curr] = item
+            self.curr = (self.curr + 1) % self.capacity # test pass if this line is below the previous, why?
         else:
             self.storage.append(item)
 
