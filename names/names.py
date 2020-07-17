@@ -27,12 +27,12 @@ class BSTNode:
         elif target < self.value:           # Case 2: target < self.value
             if self.left is None:               # If self.left is None...
                 return False                    # ...its not in the tree
-            else:
+            else:                               # or return with proof
                 return self.left.contains(target)
         else:                               # Case 3: otherwise
-            if self.right is None:
-                return False
-            else:
+            if self.right is None:              # If self.left is None...
+                return False                    # ...its not in the tree
+            else:                               # or return with proof
                 return self.right.contains(target)
 
 start_time = time.time()
